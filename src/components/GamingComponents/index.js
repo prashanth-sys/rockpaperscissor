@@ -7,6 +7,9 @@ class GamingComponents extends Component {
 
   render() {
     const {count} = this.state
+
+    const {choicesList} = this.props
+
     return (
       <div className="bg-container">
         <div className="card-container">
@@ -19,6 +22,13 @@ class GamingComponents extends Component {
             <h1 className="score-heading">score</h1>
             <h1 className="score-heading">{count}</h1>
           </div>
+        </div>
+        <div>
+          {choicesList.map(image => (
+            <div className="image-container">
+              <img src={image.imageUrl} alt={image.id} className="image" />
+            </div>
+          ))}
         </div>
       </div>
     )
